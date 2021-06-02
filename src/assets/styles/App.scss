@@ -1,11 +1,18 @@
+@import "./Vars.scss";
+@import "./Media.scss";
+
 body {
   margin: 0;
   padding: 0;
-  background: #8f57fd;
+  background: $main-color;
   color: white;
-  font-family: 'Muli', sans-serif;
+  font-family: $theme-font;
 }
 
 * {
   box-sizing: border-box;
+}
+
+::placeholder {
+  color: white;
 }
