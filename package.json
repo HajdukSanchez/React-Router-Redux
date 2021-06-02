@@ -1,7 +1,7 @@
 {
-  "name": "PlatziVideo",
+  "name": "platzivideo",
   "version": "1.0.0",
-  "description": "",
+  "description": "Platzi video React practical",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -36,5 +36,13 @@
     "webpack": "^5.38.1",
     "webpack-cli": "^4.7.0",
     "webpack-dev-server": "^3.11.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HajdukSanchez/Practical-React.git"
+  },
+  "bugs": {
+    "url": "https://github.com/HajdukSanchez/Practical-React/issues"
+  },
+  "homepage": "https://github.com/HajdukSanchez/Practical-React#readme"
 }
