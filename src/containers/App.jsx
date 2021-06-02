@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "../assets/styles/App.scss";
+import useInitialState from "../hooks/useInitialState";
 
 import Header from "../components/Header";
 import Search from "../components/Search";
@@ -8,32 +9,36 @@ import Carousel from "../components/Carousel";
 import CarouselItem from "../components/CarouselItem";
 import Footer from "../components/Footer";
 
+const API = "http://localhost:3000/initialState";
+
 const App = () => {
-  const [videos, setVideos] = useState({ mylist: [], trends: [], originals: [] });
-  const API = "http://localhost:3000/initialState";
+  const initialState = useInitialState(API);
 
-  // The second parameter is for not create and infinity loop listened changes
-  useEffect(() => {
-    fetch(API)
-      .then((response) => response.json())
-      .then((data) => setVideos(data))
-      .catch((error) => console.log(error));
-  }, []);
-
-  return (
+  return initialState.length === 0 ? (
+    <h1>Loading...</h1>
+  ) : (
     <div className='App'>
       <Header />
       <Search />
-      {videos.mylist.length > 0 && (
+      {initialState.mylist.length > 0 && (
         <Categories title='My list'>
           <Carousel>
-            <CarouselItem />
+            {initialState.mylist.map((item) => (
+              <CarouselItem key={item.id} {...item} />
+            ))}
           </Carousel>
         </Categories>
       )}
       <Categories title='Trends'>
         <Carousel>
-          {videos.trends.map((item) => (
+          {initialState.trends.map((item) => (
+            <CarouselItem key={item.id} {...item} />
+          ))}
+        </Carousel>
+      </Categories>
+      <Categories title='Originals'>
+        <Carousel>
+          {initialState.originals.map((item) => (
             <CarouselItem key={item.id} {...item} />
           ))}
         </Carousel>
