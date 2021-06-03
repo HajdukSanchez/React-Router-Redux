@@ -1,15 +1,24 @@
 {
-  "name": "PlatziVideo",
+  "name": "platzivideo",
   "version": "1.0.0",
-  "description": "",
+  "description": "Platzi video React practical",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --mode production",
+    "start": "webpack serve --open --mode development"
   },
   "keywords": [],
   "author": "Jozek Andrzej Hajduk Sánchez <hajduksanchez.dev@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.27.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.24.0",
+    "prop-types": "^15.7.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
@@ -17,6 +26,24 @@
     "@babel/core": "^7.14.3",
     "@babel/preset-env": "^7.14.4",
     "@babel/preset-react": "^7.13.13",
-    "babel-loader": "^8.2.2"
-  }
+    "babel-loader": "^8.2.2",
+    "css-loader": "^5.2.6",
+    "file-loader": "^6.2.0",
+    "html-loader": "^2.1.2",
+    "html-webpack-plugin": "^5.3.1",
+    "mini-css-extract-plugin": "^1.6.0",
+    "node-sass": "^6.0.0",
+    "sass-loader": "^12.0.0",
+    "webpack": "^5.38.1",
+    "webpack-cli": "^4.7.0",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HajdukSanchez/Practical-React.git"
+  },
+  "bugs": {
+    "url": "https://github.com/HajdukSanchez/Practical-React/issues"
+  },
+  "homepage": "https://github.com/HajdukSanchez/Practical-React#readme"
 }

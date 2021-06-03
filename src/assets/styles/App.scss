@@ -1,0 +1,22 @@
+@import "./Vars.scss";
+@import "./Media.scss";
+
+body {
+  margin: 0;
+  padding: 0;
+  background: $main-color;
+  color: white;
+  font-family: $theme-font;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::placeholder {
+  color: white;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
