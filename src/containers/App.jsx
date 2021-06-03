@@ -29,6 +29,7 @@ const App = () => {
           </Carousel>
         </Categories>
       )}
+
       <Categories title='Trends'>
         <Carousel>
           {initialState.trends.map((item) => (
@@ -36,6 +37,7 @@ const App = () => {
           ))}
         </Carousel>
       </Categories>
+
       <Categories title='Originals'>
         <Carousel>
           {initialState.originals.map((item) => (
