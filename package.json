@@ -1,7 +1,7 @@
 {
   "name": "platzivideo",
   "version": "1.0.0",
-  "description": "Platzi video React practical",
+  "description": "Platzi video React with React Router and Redux",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -33,6 +33,7 @@
     "html-webpack-plugin": "^5.3.1",
     "mini-css-extract-plugin": "^1.6.0",
     "node-sass": "^6.0.0",
+    "react-router-dom": "^5.2.0",
     "sass-loader": "^12.0.0",
     "webpack": "^5.38.1",
     "webpack-cli": "^4.7.0",
@@ -40,10 +41,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/HajdukSanchez/Practical-React.git"
+    "url": "git+https://github.com/HajdukSanchez/React-Router-Redux.git"
   },
   "bugs": {
-    "url": "https://github.com/HajdukSanchez/Practical-React/issues"
+    "url": "https://github.com/HajdukSanchez/React-Router-Redux/issues"
   },
-  "homepage": "https://github.com/HajdukSanchez/Practical-React#readme"
+  "homepage": "https://github.com/HajdukSanchez/React-Router-Redux#readme"
 }
