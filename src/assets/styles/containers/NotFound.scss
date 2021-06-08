@@ -1,0 +1,35 @@
+.mainbox {
+  position: relative;
+  margin: auto;
+  width: 600px;
+  height: 600px;
+  background-color: transparent;
+}
+
+.err {
+  position: absolute;
+  left: 20%;
+  top: 8%;
+  color: #ffffff;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 11rem;
+}
+
+.msg {
+  position: absolute;
+  left: 16%;
+  top: 45%;
+  width: 75%;
+  text-align: center;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 1.6rem;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
