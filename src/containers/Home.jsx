@@ -1,6 +1,5 @@
 import React from "react";
 import "../assets/styles/App.scss";
-import useInitialState from "../hooks/useInitialState";
 
 import { connect } from "react-redux";
 
