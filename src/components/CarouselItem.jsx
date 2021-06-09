@@ -3,22 +3,27 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import "../assets/styles/components/CarouselItem.scss";
 
-import { setFavorite } from "../actions";
+import { setFavorite, deleteFavorite } from "../actions";
 
 import playIcon from "../assets/static/play-icon.png";
 import plusIcon from "../assets/static/plus-icon.png";
+import removeIcon from "../assets/static/remove-icon.png";
 
 const CarouselItem = (props) => {
-  const { cover, title, year, contentRating, duration } = props;
+  const { id, cover, title, year, contentRating, duration } = props;
   // Here we use the prop action that we stablish in the connect section
   const handleSetFavorite = () => {
     props.setFavorite({
+      id,
       cover,
       title,
       year,
       contentRating,
       duration,
     });
+  };
+  const handleDeleteFavorite = (itemId) => {
+    props.deleteFavorite(itemId);
   };
   return (
     <div className='carousel-item'>
@@ -27,6 +32,8 @@ const CarouselItem = (props) => {
         <div>
           <img className='carousel-item__details--img' src={playIcon} alt='Play Icon' />
           <img className='carousel-item__details--img' src={plusIcon} alt='Plus Icon' onClick={handleSetFavorite} />
+          {/* If we need to pass a parameter, we need to call it in other way, not like the function below. */}
+          <img className='carousel-item__details--img' src={removeIcon} alt='Plus Icon' onClick={() => handleDeleteFavorite(id)} />
         </div>
         <p className='carousel-item__details--title'>{title}</p>
         <p className='carousel-item__details--subtitle'>{`${year} ${contentRating} ${duration}`}</p>
@@ -48,6 +55,7 @@ CarouselItem.propTypes = {
 // This prop are going to we available to use in our component
 const mapDispatchToProps = {
   setFavorite,
+  deleteFavorite,
 };
 
 // If we don't want to use the reducers reducer state information, we don't pass this parameter
