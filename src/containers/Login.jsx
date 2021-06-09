@@ -1,12 +1,16 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
 import "../assets/styles/containers/Login.scss";
+
+import { loginRequest } from "../actions";
 
 import googleIcon from "../assets/static/google-icon.png";
 import twitterIcon from "../assets/static/twitter-icon.png";
 
-const Login = () => {
+const Login = (props) => {
   const [form, setForm] = useState({ email: "" });
+
   const handleInput = (event) => {
     setForm({
       ...form,
@@ -14,10 +18,13 @@ const Login = () => {
       [event.target.name]: event.target.value,
     });
   };
+
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(form);
+    props.loginRequest(form); //We send our form state to the storage state
+    props.history.push("/"); // If the user is accepted, we redirect him to the home page
   };
+
   return (
     <section className='login'>
       <section className='login__container'>
@@ -51,4 +58,8 @@ const Login = () => {
   );
 };
 
-export default Login;
+const mapDispatchToProps = {
+  loginRequest,
+};
+
+export default connect(null, mapDispatchToProps)(Login);
