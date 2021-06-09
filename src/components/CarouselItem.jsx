@@ -10,7 +10,7 @@ import plusIcon from "../assets/static/plus-icon.png";
 import removeIcon from "../assets/static/remove-icon.png";
 
 const CarouselItem = (props) => {
-  const { id, cover, title, year, contentRating, duration } = props;
+  const { id, cover, title, year, contentRating, duration, isList } = props;
   // Here we use the prop action that we stablish in the connect section
   const handleSetFavorite = () => {
     props.setFavorite({
@@ -31,9 +31,12 @@ const CarouselItem = (props) => {
       <div className='carousel-item__details'>
         <div>
           <img className='carousel-item__details--img' src={playIcon} alt='Play Icon' />
-          <img className='carousel-item__details--img' src={plusIcon} alt='Plus Icon' onClick={handleSetFavorite} />
           {/* If we need to pass a parameter, we need to call it in other way, not like the function below. */}
-          <img className='carousel-item__details--img' src={removeIcon} alt='Plus Icon' onClick={() => handleDeleteFavorite(id)} />
+          {isList ? (
+            <img className='carousel-item__details--img' src={removeIcon} alt='Plus Icon' onClick={() => handleDeleteFavorite(id)} />
+          ) : (
+            <img className='carousel-item__details--img' src={plusIcon} alt='Plus Icon' onClick={handleSetFavorite} />
+          )}
         </div>
         <p className='carousel-item__details--title'>{title}</p>
         <p className='carousel-item__details--subtitle'>{`${year} ${contentRating} ${duration}`}</p>
