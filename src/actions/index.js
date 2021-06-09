@@ -18,3 +18,9 @@ export const loginRequest = (payload) => ({
   type: "LOGIN_REQUEST",
   payload,
 });
+
+// Close session
+export const logoutRequest = (payload) => ({
+  type: "LOGOUT_REQUEST",
+  payload,
+});
