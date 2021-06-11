@@ -5,6 +5,7 @@ import "../assets/styles/containers/Login.scss";
 
 import { loginRequest } from "../actions";
 
+import Header from "../components/Header";
 import googleIcon from "../assets/static/google-icon.png";
 import twitterIcon from "../assets/static/twitter-icon.png";
 
@@ -26,36 +27,39 @@ const Login = (props) => {
   };
 
   return (
-    <section className='login'>
-      <section className='login__container'>
-        <h2>Log In</h2>
-        <form className='login__container--form' onSubmit={handleSubmit}>
-          <input className='input' type='text' placeholder='Mail' name='email' onChange={handleInput} />
-          <input className='input' type='password' placeholder='Password' name='password' onChange={handleInput} />
-          <button className='button'>Login</button>
-          <div className='login__container--remember-me'>
-            <label>
-              <input type='checkbox' id='cbox1' value='first_checkbox' />
-              Remember me
-            </label>
-            <a href='/'>Forget my password</a>
-          </div>
-          <br />
-        </form>
-        <section className='login__container--social-media'>
-          <div>
-            <img src={googleIcon} /> Login with Google
-          </div>
-          <div>
-            <img src={twitterIcon} /> Login with Twitter
-          </div>
+    <>
+      <Header isLogin />
+      <section className='login'>
+        <section className='login__container'>
+          <h2>Log In</h2>
+          <form className='login__container--form' onSubmit={handleSubmit}>
+            <input className='input' type='text' placeholder='Mail' name='email' onChange={handleInput} />
+            <input className='input' type='password' placeholder='Password' name='password' onChange={handleInput} />
+            <button className='button'>Login</button>
+            <div className='login__container--remember-me'>
+              <label>
+                <input type='checkbox' id='cbox1' value='first_checkbox' />
+                Remember me
+              </label>
+              <a href='/'>Forget my password</a>
+            </div>
+            <br />
+          </form>
+          <section className='login__container--social-media'>
+            <div>
+              <img src={googleIcon} /> Login with Google
+            </div>
+            <div>
+              <img src={twitterIcon} /> Login with Twitter
+            </div>
+          </section>
+          <p className='login__container--register'>
+            You don't have an account
+            <Link to='/register'>Register</Link>
+          </p>
         </section>
-        <p className='login__container--register'>
-          You don't have an account
-          <Link to='/register'>Register</Link>
-        </p>
       </section>
-    </section>
+    </>
   );
 };
 
