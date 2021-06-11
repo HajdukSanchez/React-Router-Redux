@@ -40,6 +40,7 @@ const Login = (props) => {
             </label>
             <a href='/'>Forget my password</a>
           </div>
+          <br />
         </form>
         <section className='login__container--social-media'>
           <div>
