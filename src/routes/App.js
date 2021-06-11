@@ -19,7 +19,7 @@ const App = () => (
         <Route exact path='/' component={Home} />
         <Route exact path='/login' component={Login} />
         <Route exact path='/register' component={Register} />
-        <Route exact path='/player/:id' component={Player} />
+        <Route exact path='/player/:id/:title' component={Player} />
         {/* This is like the Default component, when the user type an incorrect path */}
         <Route component={NotFound} />
       </Switch>

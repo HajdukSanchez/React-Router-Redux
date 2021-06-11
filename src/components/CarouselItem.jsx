@@ -33,7 +33,7 @@ const CarouselItem = (props) => {
       <img className='carousel-item__img' src={cover} alt={title} />
       <div className='carousel-item__details'>
         <div>
-          <Link to={`/player/${id}`}>
+          <Link to={`/player/${id}/${title.trim().replace(/ /g, "-").toLowerCase()}`}>
             <img className='carousel-item__details--img' src={playIcon} alt='Play Icon' />
           </Link>
           {/* If we need to pass a parameter, we need to call it in other way, not like the function below. */}
