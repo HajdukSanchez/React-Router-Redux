@@ -27,6 +27,13 @@ const reducer = (state, action) => {
         ...state,
         user: action.payload,
       };
+    case "GET_VIDEO_SOURCE":
+      return {
+        ...state,
+        // Show in trends and originals lists the video to show them
+        // If the video doesn't exist we create an null array
+        playing: state.trends.find((item) => item.id === Number(action.payload)) || state.originals.find((item) => item.id === Number(action.payload)) || [],
+      };
     default:
       return state;
   }
