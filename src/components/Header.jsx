@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 import "../assets/styles/components/Header.scss";
 
 import gravatar from "../utils/gravatar";
@@ -58,6 +59,12 @@ const Header = (props) => {
       </div>
     </header>
   );
+};
+
+Header.propTypes = {
+  user: PropTypes.object,
+  isLogin: PropTypes.bool,
+  isRegister: PropTypes.bool,
 };
 
 const mapStateToProps = (state) => {

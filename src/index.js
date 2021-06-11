@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import App from "./routes/App"; /* We add our routes file */
 
 import { Provider } from "react-redux";
-import { createStore } from "redux";
+import { createStore, compose } from "redux";
 import reducer from "./reducers";
 
 // Our object with information
@@ -173,7 +173,9 @@ const initialState = {
   ],
 };
 
-const store = createStore(reducer, initialState);
+// This is a function for connect the Redux dev tools (in the browser) and our redux local application
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
+const store = createStore(reducer, initialState, composeEnhancers);
 
 ReactDOM.render(
   <Provider store={store}>

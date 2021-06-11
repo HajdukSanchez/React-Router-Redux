@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import "../assets/styles/components/Search.scss";
 
 import classNames from "classnames";
@@ -14,6 +15,10 @@ const Search = ({ isHome }) => {
       <input type='text' className='input' placeholder='Search...' />
     </section>
   );
+};
+
+Search.propTypes = {
+  isHome: PropTypes.bool,
 };
 
 export default Search;
