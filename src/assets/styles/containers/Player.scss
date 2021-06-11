@@ -1,0 +1,31 @@
+video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: 0;
+
+  &:hover .Player-back {
+    display: block;
+  }
+}
+
+.Player-back {
+  position: fixed;
+  top: 5px;
+  left: 5px;
+  font-size: 12px;
+
+  & button {
+    padding: 5px;
+    text-decoration: none;
+    color: white;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+  }
+}

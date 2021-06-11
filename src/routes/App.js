@@ -5,6 +5,7 @@ import Home from "../containers/Home";
 import Login from "../containers/Login";
 import Register from "../containers/Register";
 import NotFound from "../containers/NotFound";
+import Player from "../containers/Player";
 import Layout from "../components/Layout";
 
 const App = () => (
@@ -18,6 +19,7 @@ const App = () => (
         <Route exact path='/' component={Home} />
         <Route exact path='/login' component={Login} />
         <Route exact path='/register' component={Register} />
+        <Route exact path='/player/:id' component={Player} />
         {/* This is like the Default component, when the user type an incorrect path */}
         <Route component={NotFound} />
       </Switch>
